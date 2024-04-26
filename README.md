@@ -13,7 +13,7 @@ To use this project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/NIk22517/render_on_view.git
    ```
 
 2. Install dependencies:
