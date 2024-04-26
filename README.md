@@ -4,7 +4,7 @@ This project demonstrates how to implement showing React components on page scro
 
 ## Introduction
 
-In modern web applications built with React, lazy loading components based on user interaction can significantly improve performance by deferring the loading of non-visible components until they are needed. This project provides a solution to implement lazy loading for React components using the Intersection Observer API.
+In modern web applications built with React, showing components on-demand based on user interaction can significantly improve performance by deferring the loading of non-visible components until they are needed. This project provides a solution to implement showing React components on page scroll using the Intersection Observer API. This ensures that API calls are made only when the component is in the viewport, reducing unnecessary API requests on initial page load.
 
 ## Installation
 
