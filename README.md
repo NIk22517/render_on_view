@@ -30,8 +30,6 @@ To use this project, follow these steps:
 
 ## Usage
 
-## Usage
-
 To implement showing React components on page scroll, this project provides the `RenderOnViewportEntry` component. This component utilizes the Intersection Observer API to detect when an element enters the viewport. It accepts the following props:
 
 - `renderChild`: The React node to render when the component is in the viewport.
