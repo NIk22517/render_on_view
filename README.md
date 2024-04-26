@@ -30,15 +30,16 @@ To use this project, follow these steps:
 
 ## Usage
 
-To implement lazy loading for React components, follow these steps:
+## Usage
 
-1. Import the `RenderOnViewportEntry` component from the `helper/RenderOnView` file.
+To implement showing React components on page scroll, this project provides the `RenderOnViewportEntry` component. This component utilizes the Intersection Observer API to detect when an element enters the viewport. It accepts the following props:
 
-2. Wrap the components you want to lazy load inside the `RenderOnViewportEntry` component.
+- `renderChild`: The React node to render when the component is in the viewport.
+- `threshold`: A number indicating the percentage of the target element's visibility needed to trigger the callback. The default value is `0`.
+- `root`: The ID of the element that is used as the viewport when checking visibility of the target element. If not specified, the browser viewport is used.
+- `rootMargin`: A margin around the root element's bounding box. This allows you to specify a buffer around the root element to expand or contract the area used for intersection detection.
 
-3. Specify the `threshold` property to control when the lazy-loaded component should start loading. The default value is `0`.
-
-4. Customize the styles and content of the lazy-loaded components as needed.
+By wrapping lazy-loaded components with the `RenderOnViewportEntry` component, you can ensure that the components are rendered only when they become visible to the user.
 
    ```jsx
    import React from "react";
