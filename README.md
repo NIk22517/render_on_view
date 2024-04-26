@@ -35,7 +35,7 @@ To use this project, follow these steps:
 To implement showing React components on page scroll, this project provides the `RenderOnViewportEntry` component. This component utilizes the Intersection Observer API to detect when an element enters the viewport. It accepts the following props:
 
 - `renderChild`: The React node to render when the component is in the viewport.
-- `threshold`: A number indicating the percentage of the target element's visibility needed to trigger the callback. The default value is `0`.
+- `threshold`: A number indicating the percentage of the target element's visibility needed to trigger the callback. The default value is `0`. This value is provided directly to the Intersection Observer API as the threshold for triggering the callback function. For example, a threshold of `0.5` will trigger the callback when half of the target element is visible in the viewport.
 - `root`: The ID of the element that is used as the viewport when checking visibility of the target element. If not specified, the browser viewport is used.
 - `rootMargin`: A margin around the root element's bounding box. This allows you to specify a buffer around the root element to expand or contract the area used for intersection detection.
 
