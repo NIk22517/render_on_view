@@ -1,46 +1,104 @@
-# Getting Started with Create React App
+# Lazy Loading React Components on Page Scroll using Intersection Observer API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to implement lazy loading for React components on page scroll using the Intersection Observer API.
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+In modern web applications built with React, lazy loading components based on user interaction can significantly improve performance by deferring the loading of non-visible components until they are needed. This project provides a solution to implement lazy loading for React components using the Intersection Observer API.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To use this project, follow these steps:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/your-username/your-repository.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies:
 
-### `npm run build`
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Run the application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+To implement lazy loading for React components, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Import the `RenderOnViewportEntry` component from the `helper/RenderOnView` file.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Wrap the components you want to lazy load inside the `RenderOnViewportEntry` component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Specify the `threshold` property to control when the lazy-loaded component should start loading. The default value is `0`.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Customize the styles and content of the lazy-loaded components as needed.
 
-## Learn More
+   ```jsx
+   import React from "react";
+   import FirstComponent from "./FirstComponent";
+   import SecondComponent from "./SecondComponent";
+   import { RenderOnViewportEntry } from "./helper/RenderOnView";
+   import ThirdComponent from "./ThirdComponent";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   function App() {
+     return (
+       <div
+         style={{
+           padding: "1rem",
+           display: "flex",
+           flexDirection: "column",
+           gap: "1rem",
+         }}
+       >
+         <div
+           style={{
+             height: "95vh",
+           }}
+         >
+           <SecondComponent />
+         </div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+         <RenderOnViewportEntry
+           renderChild={
+             <div
+               style={{
+                 height: "95vh",
+                 backgroundColor: "white",
+               }}
+             >
+               <ThirdComponent />
+             </div>
+           }
+           threshold={1}
+         />
+
+         <RenderOnViewportEntry
+           renderChild={
+             <div
+               style={{
+                 height: "95vh",
+                 backgroundColor: "white",
+               }}
+             >
+               <FirstComponent />
+             </div>
+           }
+           threshold={1}
+         />
+       </div>
+     );
+   }
+
+   export default App;
+   ```
+
+## Conclusion
+
+Implementing lazy loading for React components using the Intersection Observer API can significantly improve the performance of web applications by loading components only when they become visible to the user. This approach helps reduce initial page load times and enhances the overall user experience.
