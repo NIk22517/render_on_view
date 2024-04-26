@@ -1,24 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import FirstComponent from "./FirstComponent";
+import SecondComponent from "./SecondComponent";
+import { RenderOnViewportEntry } from "./helper/RenderOnView";
+import ThirdComponent from "./ThirdComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        padding: "1rem",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1rem",
+      }}
+    >
+      <div
+        style={{
+          height: "95vh",
+        }}
+      >
+        <SecondComponent />
+      </div>
+
+      <RenderOnViewportEntry
+        renderChild={
+          <div
+            style={{
+              height: "95vh",
+              backgroundColor: "white",
+            }}
+          >
+            <ThirdComponent />
+          </div>
+        }
+        threshold={1}
+      />
+
+      <RenderOnViewportEntry
+        renderChild={
+          <div
+            style={{
+              height: "95vh",
+              backgroundColor: "white",
+            }}
+          >
+            <FirstComponent />
+          </div>
+        }
+        threshold={1}
+      />
     </div>
   );
 }
