@@ -1,4 +1,4 @@
-# Lazy Loading React Components on Page Scroll using Intersection Observer API
+# React Components on Page Scroll using Intersection Observer API
 
 This project demonstrates how to implement showing React components on page scroll using the Intersection Observer API. This ensures that API calls are made only when the component is in the viewport, reducing unnecessary API requests on initial page load.
 
