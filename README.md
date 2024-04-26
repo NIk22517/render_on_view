@@ -101,4 +101,4 @@ To implement lazy loading for React components, follow these steps:
 
 ## Conclusion
 
-Implementing lazy loading for React components using the Intersection Observer API can significantly improve the performance of web applications by loading components only when they become visible to the user. This approach helps reduce initial page load times and enhances the overall user experience.
+Implementing showing React components on page scroll using the Intersection Observer API can significantly improve the performance of web applications by loading components only when they become visible to the user. This approach helps reduce initial page load times and enhances the overall user experience by minimizing unnecessary API requests.
